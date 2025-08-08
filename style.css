@@ -2,13 +2,14 @@
 body{
     background-color: #98A1BC;
     height: 100vh;
-margin: 0;
-display: flex;
-  justify-content: center; 
+    margin: 0;
+    display: flex;
+     justify-content: center; 
      align-items: center;  
-    flex-direction: column;
+      flex-direction: column;
 }
 
+/* orden del header */
 header {
   position: fixed;
   top: 0;
@@ -25,13 +26,6 @@ header {
 }
 
 
-#nav-list-opt {
-
-    background-color: #F4EBD3;
-    padding: 10px;
-    border-radius: 10px;
-
-}
 
 
 
