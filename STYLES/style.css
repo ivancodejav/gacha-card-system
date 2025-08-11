@@ -8,6 +8,7 @@ body {
   flex-direction: column;
 }
 
+
 /* orden del header */
 header {
   position: fixed;
@@ -22,28 +23,35 @@ header {
   padding: 0 20px;
   box-shadow: 1px 1px 10px black;
   border-bottom: 2px solid #555879;
+    perspective: 800px; 
 }
 
+
 /* estilo del boton del logo */
+
 .logo-link {
   position: absolute;
   left: 40px;
   display: flex;
   height: 40px;
   border-radius: 10px;
-  transition: background-color 0.5s, color 0.5s, box-shadow 0.2s;
+  transition: background-color 0.5s, color 0.5s;
 }
 
 .logo-link:hover {
   background-color: #ded3c4;
-  box-shadow: 0px 0px 7px black;
+  animation-name: logo-funny;
+  animation-duration: 1.5s;
 }
+
 
 /* estilo del nav+list  */
 header .nav-list-trans {
+  display: inline-block;
   font-family: "Nerko One", cursive;
   font-weight: 300;
   font-style: normal;
+  border: 0px solid rgba(0, 0, 0, 0);
   padding: 6px;
   font-size: 20px;
   margin: 20px;
@@ -51,23 +59,34 @@ header .nav-list-trans {
   background-color: #555879;
   color: #f4ebd3;
   border-radius: 10px;
-  transition: 0.2s;
+  transition: transform 0.2s ease, background-color 0.2s ease, border 0.2s ease;
+  transform-style: preserve-3d;
 }
+
+
 
 header .nav-list-trans:hover {
   background-color: #98a1bc;
+      transform: translatez(10px) scale(1.1);
+      letter-spacing: 2px;
+      border: 2px solid black;
+      box-shadow: 0px 0px 20px black;
+  animation-name: button-jiggle;
+  animation-duration: 1s;
 }
+
 
 /* estilo de info de inicio */
 .info-inicio {
+  display: block;
   background-color: #f4ebd3;
   color: rgb(0, 0, 0);
   border-radius: 50px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 750px;
-  height: 300px;
   text-align: center;
   border: 8px double #ded3c4;
+  animation-name: intro-mainbox;
+  animation-duration: 0.9s;
 }
 
 h1 {
@@ -78,12 +97,64 @@ h1 {
   font-style: normal;
   font-size: 50px;
   border-bottom: 5px solid #555879;
+  animation-name: intro-mainbox-h1;
+  animation-duration: 0.9s;
 }
 
 .info-inicio p {
+  display: block;
   font-size: 17px;
   font-family: "Nerko One", cursive;
   font-weight: 300;
   font-style: normal;
-  color: #555879;
+  animation-name: intro-mainbox-text;
+  animation-duration: 0.9s;
+  color:  #555879;
+}
+
+
+/* 1 */
+/* 2 */
+
+
+
+
+/* ANIMACIONES */
+
+@keyframes button-jiggle {
+  0% {rotate: -5deg; box-shadow: 0px 0px 20px black;}
+  5% {rotate: 5deg;}
+  20% {rotate: -5deg;}
+  30% {rotate: 5deg}
+  40% {rotate: -5deg;}
+  50% {rotate: 5deg}
+  60% {rotate: -5deg;}
+  70% {rotate: 5deg}
+  80% {rotate: -5deg;}
+  90% {rotate: 5deg}
+  100% {rotate: 0deg; box-shadow: 0px 0px 20px black;}
+}
+
+@keyframes logo-funny {
+  0% {border: 0px solid #55587900; rotate: 0deg; height: 40px; width: 40px;}
+  50% {border: 5px solid #555879; box-shadow: 0px 0px 30px black; height: 46px; width: 46px; margin-top: 10px;}
+  80% {border: 0px solid #55587900;}
+  100% {box-shadow: 0px 0px 0px rgba(0, 0, 0, 0); rotate: 360deg; height: 40px; width: 40px;}
+}
+
+@keyframes intro-mainbox {
+0% {width: 0px; height: 0px;}
+50% {width: 750px; height: 300px;}
+}
+
+@keyframes intro-mainbox-text{
+  0% {color: #55587900;}
+  30% {color: #55587900;}
+  100% {color:  #555879;}
+}
+
+@keyframes intro-mainbox-h1{
+  0% {color: #55587900; border-bottom: 5px solid #55587900;}
+  30% {color: #55587900; border-bottom: 5px solid #55587900;}
+  100% {color:  #555879; border-bottom: 5px solid #555879;}
 }

@@ -17,18 +17,19 @@ body {
 }
 
 hr {
-  width: 90%;
+  width: 10%;
   background-color: #ded3c4;
   border: 2px solid #555879;
 }
 
 .box1 {
-  margin-top: -33px;
+  margin-top: -30px;
   margin-left: 20px;
   margin-right: 20px;
   border-left: 4px solid #555879;
   border-right: 4px solid #555879;
   background-color: #ded3c46e;
+  border-radius: 10px;
 }
 
 .box1 p {
